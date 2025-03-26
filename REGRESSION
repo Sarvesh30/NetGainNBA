@@ -39,5 +39,39 @@ new_team = pd.DataFrame({
 
 predicted_win_pct = xgb_reg.predict(new_team)[0]  # Predict Win%
 
+#################################################################
+# Random Forest Model
 
+from sklearn.ensemble import RandomForestRegressor
+rf_model = RandomForestRegressor(
+    n_estimators=500,       # More trees for stability
+    max_depth=20,           # Control depth to prevent overfitting
+    min_samples_split=5,    # Avoid splitting on very few samples
+    min_samples_leaf=2,     # Avoid very small leaf nodes
+    max_features='sqrt',    # Use a subset of features per tree
+    max_samples=0.8,        # Use only 80% of data per tree
+    random_state=42,
+    n_jobs=-1
+)
+
+rf_model.fit(X_train, y_train)
+y_pred_rf = rf_model.predict(X_test)
+mse_rf = mean_squared_error(y_test, y_pred_rf)
+rmse_rf = np.sqrt(mse_rf)
+print(f"Random Forest MSE: {mse_rf:.4f}")
+print(f"Random Forest RMSE: {rmse_rf:.4f}")
+
+
+
+# Feature Importance
+
+importance = rf_model.feature_importances_
+feature_importance = sorted(zip(X.columns, importance), key=lambda x: x[1], reverse=True)
+
+plt.figure(figsize=(10,6))
+sns.barplot(x=[x[1] for x in feature_importance], y=[x[0] for x in feature_importance])
+plt.xlabel("Feature Importance Score")
+plt.ylabel("Features")
+plt.title("Feature Importance in Random Forest")
+plt.show()
 
