@@ -1,4 +1,4 @@
-# NBA Net Gain Web Application
+# NetGainNBA
 
 This project is a web application that uses ML to predict NBA match outcomes. It combines **data collection, cleaning, machine learning modeling, and simulations** to provide actionable insights for front office management.  
 
