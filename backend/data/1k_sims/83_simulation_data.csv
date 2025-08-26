@@ -1,0 +1,98 @@
+simulation_id,record_type,team_a_id,team_a_name,team_b_id,team_b_name,win_probability,team_a_wins,team_b_wins,series_winner_id,series_winner_name,total_games,game_number,game_win_probability,game_winner_id,game_winner_name,round
+1,series_summary,1610612739,Cleveland Cavaliers,1610612748,Miami Heat,0.9885197877883911,4.0,0.0,1610612739,Cleveland Cavaliers,4.0,,,,,1
+1,game,1610612739,Cleveland Cavaliers,1610612748,Miami Heat,0.9885197877883911,,,,,,1.0,0.6922651349011584,1610612739,Cleveland Cavaliers,1
+1,game,1610612739,Cleveland Cavaliers,1610612748,Miami Heat,0.9885197877883911,,,,,,2.0,0.6234739057566805,1610612739,Cleveland Cavaliers,1
+1,game,1610612739,Cleveland Cavaliers,1610612748,Miami Heat,0.9885197877883911,,,,,,3.0,0.5546887214663105,1610612739,Cleveland Cavaliers,1
+1,game,1610612739,Cleveland Cavaliers,1610612748,Miami Heat,0.9885197877883911,,,,,,4.0,0.7059164634702566,1610612739,Cleveland Cavaliers,1
+2,series_summary,1610612754,Indiana Pacers,1610612749,Milwaukee Bucks,0.6874486207962036,2.0,4.0,1610612749,Milwaukee Bucks,6.0,,,,,1
+2,game,1610612754,Indiana Pacers,1610612749,Milwaukee Bucks,0.6874486207962036,,,,,,1.0,0.8599569512574788,1610612749,Milwaukee Bucks,1
+2,game,1610612754,Indiana Pacers,1610612749,Milwaukee Bucks,0.6874486207962036,,,,,,2.0,0.3720522017735479,1610612754,Indiana Pacers,1
+2,game,1610612754,Indiana Pacers,1610612749,Milwaukee Bucks,0.6874486207962036,,,,,,3.0,0.9296566316751895,1610612749,Milwaukee Bucks,1
+2,game,1610612754,Indiana Pacers,1610612749,Milwaukee Bucks,0.6874486207962036,,,,,,4.0,0.025585580868186963,1610612754,Indiana Pacers,1
+2,game,1610612754,Indiana Pacers,1610612749,Milwaukee Bucks,0.6874486207962036,,,,,,5.0,0.7806487442800256,1610612749,Milwaukee Bucks,1
+2,game,1610612754,Indiana Pacers,1610612749,Milwaukee Bucks,0.6874486207962036,,,,,,6.0,0.7136134002458957,1610612749,Milwaukee Bucks,1
+3,series_summary,1610612738,Boston Celtics,1610612753,Orlando Magic,0.9872128963470459,4.0,1.0,1610612738,Boston Celtics,5.0,,,,,1
+3,game,1610612738,Boston Celtics,1610612753,Orlando Magic,0.9872128963470459,,,,,,1.0,0.9177609748047668,1610612753,Orlando Magic,1
+3,game,1610612738,Boston Celtics,1610612753,Orlando Magic,0.9872128963470459,,,,,,2.0,0.35665503050933023,1610612738,Boston Celtics,1
+3,game,1610612738,Boston Celtics,1610612753,Orlando Magic,0.9872128963470459,,,,,,3.0,0.010539147106174429,1610612738,Boston Celtics,1
+3,game,1610612738,Boston Celtics,1610612753,Orlando Magic,0.9872128963470459,,,,,,4.0,0.29000803297885747,1610612738,Boston Celtics,1
+3,game,1610612738,Boston Celtics,1610612753,Orlando Magic,0.9872128963470459,,,,,,5.0,0.6775745317010774,1610612738,Boston Celtics,1
+4,series_summary,1610612752,New York Knicks,1610612765,Detroit Pistons,0.6248999834060669,4.0,1.0,1610612752,New York Knicks,5.0,,,,,1
+4,game,1610612752,New York Knicks,1610612765,Detroit Pistons,0.6248999834060669,,,,,,1.0,0.01667442329712121,1610612752,New York Knicks,1
+4,game,1610612752,New York Knicks,1610612765,Detroit Pistons,0.6248999834060669,,,,,,2.0,0.293367121661155,1610612752,New York Knicks,1
+4,game,1610612752,New York Knicks,1610612765,Detroit Pistons,0.6248999834060669,,,,,,3.0,0.24161277992119956,1610612752,New York Knicks,1
+4,game,1610612752,New York Knicks,1610612765,Detroit Pistons,0.6248999834060669,,,,,,4.0,0.4473197984019167,1610612765,Detroit Pistons,1
+4,game,1610612752,New York Knicks,1610612765,Detroit Pistons,0.6248999834060669,,,,,,5.0,0.5417076153621424,1610612752,New York Knicks,1
+5,series_summary,1610612760,Oklahoma City Thunder,1610612763,Memphis Grizzlies,0.9765220284461975,4.0,1.0,1610612760,Oklahoma City Thunder,5.0,,,,,1
+5,game,1610612760,Oklahoma City Thunder,1610612763,Memphis Grizzlies,0.9765220284461975,,,,,,1.0,0.3082536594501978,1610612760,Oklahoma City Thunder,1
+5,game,1610612760,Oklahoma City Thunder,1610612763,Memphis Grizzlies,0.9765220284461975,,,,,,2.0,0.8411970417887152,1610612763,Memphis Grizzlies,1
+5,game,1610612760,Oklahoma City Thunder,1610612763,Memphis Grizzlies,0.9765220284461975,,,,,,3.0,0.6571666300459479,1610612760,Oklahoma City Thunder,1
+5,game,1610612760,Oklahoma City Thunder,1610612763,Memphis Grizzlies,0.9765220284461975,,,,,,4.0,0.5334142251304634,1610612760,Oklahoma City Thunder,1
+5,game,1610612760,Oklahoma City Thunder,1610612763,Memphis Grizzlies,0.9765220284461975,,,,,,5.0,0.35070247141426925,1610612760,Oklahoma City Thunder,1
+6,series_summary,1610612743,Denver Nuggets,1610612746,LA Clippers,0.5618919134140015,4.0,0.0,1610612743,Denver Nuggets,4.0,,,,,1
+6,game,1610612743,Denver Nuggets,1610612746,LA Clippers,0.5618919134140015,,,,,,1.0,0.07746423635954569,1610612743,Denver Nuggets,1
+6,game,1610612743,Denver Nuggets,1610612746,LA Clippers,0.5618919134140015,,,,,,2.0,0.6282711277941107,1610612743,Denver Nuggets,1
+6,game,1610612743,Denver Nuggets,1610612746,LA Clippers,0.5618919134140015,,,,,,3.0,0.4602897338749524,1610612743,Denver Nuggets,1
+6,game,1610612743,Denver Nuggets,1610612746,LA Clippers,0.5618919134140015,,,,,,4.0,0.7207100181098608,1610612743,Denver Nuggets,1
+7,series_summary,1610612745,Houston Rockets,1610612744,Golden State Warriors,0.54166579246521,3.0,4.0,1610612744,Golden State Warriors,7.0,,,,,1
+7,game,1610612745,Houston Rockets,1610612744,Golden State Warriors,0.54166579246521,,,,,,1.0,0.7079563633305003,1610612744,Golden State Warriors,1
+7,game,1610612745,Houston Rockets,1610612744,Golden State Warriors,0.54166579246521,,,,,,2.0,0.10951686129162497,1610612744,Golden State Warriors,1
+7,game,1610612745,Houston Rockets,1610612744,Golden State Warriors,0.54166579246521,,,,,,3.0,0.30657739636015513,1610612745,Houston Rockets,1
+7,game,1610612745,Houston Rockets,1610612744,Golden State Warriors,0.54166579246521,,,,,,4.0,0.16624885453486327,1610612745,Houston Rockets,1
+7,game,1610612745,Houston Rockets,1610612744,Golden State Warriors,0.54166579246521,,,,,,5.0,0.05646013574277087,1610612745,Houston Rockets,1
+7,game,1610612745,Houston Rockets,1610612744,Golden State Warriors,0.54166579246521,,,,,,6.0,0.8645968034815126,1610612744,Golden State Warriors,1
+7,game,1610612745,Houston Rockets,1610612744,Golden State Warriors,0.54166579246521,,,,,,7.0,0.9500368234501895,1610612744,Golden State Warriors,1
+8,series_summary,1610612747,Los Angeles Lakers,1610612750,Minnesota Timberwolves,0.3552112877368927,1.0,4.0,1610612750,Minnesota Timberwolves,5.0,,,,,1
+8,game,1610612747,Los Angeles Lakers,1610612750,Minnesota Timberwolves,0.3552112877368927,,,,,,1.0,0.1683479962279748,1610612750,Minnesota Timberwolves,1
+8,game,1610612747,Los Angeles Lakers,1610612750,Minnesota Timberwolves,0.3552112877368927,,,,,,2.0,0.30758050372744405,1610612750,Minnesota Timberwolves,1
+8,game,1610612747,Los Angeles Lakers,1610612750,Minnesota Timberwolves,0.3552112877368927,,,,,,3.0,0.8855211875529931,1610612750,Minnesota Timberwolves,1
+8,game,1610612747,Los Angeles Lakers,1610612750,Minnesota Timberwolves,0.3552112877368927,,,,,,4.0,0.21331168031786685,1610612747,Los Angeles Lakers,1
+8,game,1610612747,Los Angeles Lakers,1610612750,Minnesota Timberwolves,0.3552112877368927,,,,,,5.0,0.936211905412848,1610612750,Minnesota Timberwolves,1
+1,series_summary,1610612739,Cleveland Cavaliers,1610612749,Milwaukee Bucks,0.9256799221038818,4.0,1.0,1610612739,Cleveland Cavaliers,5.0,,,,,2
+1,game,1610612739,Cleveland Cavaliers,1610612749,Milwaukee Bucks,0.9256799221038818,,,,,,1.0,0.5859439031177215,1610612739,Cleveland Cavaliers,2
+1,game,1610612739,Cleveland Cavaliers,1610612749,Milwaukee Bucks,0.9256799221038818,,,,,,2.0,0.963122900861262,1610612749,Milwaukee Bucks,2
+1,game,1610612739,Cleveland Cavaliers,1610612749,Milwaukee Bucks,0.9256799221038818,,,,,,3.0,0.7553481351413253,1610612739,Cleveland Cavaliers,2
+1,game,1610612739,Cleveland Cavaliers,1610612749,Milwaukee Bucks,0.9256799221038818,,,,,,4.0,0.45334082633700856,1610612739,Cleveland Cavaliers,2
+1,game,1610612739,Cleveland Cavaliers,1610612749,Milwaukee Bucks,0.9256799221038818,,,,,,5.0,0.3359971156722191,1610612739,Cleveland Cavaliers,2
+2,series_summary,1610612738,Boston Celtics,1610612752,New York Knicks,0.9800788164138794,4.0,1.0,1610612738,Boston Celtics,5.0,,,,,2
+2,game,1610612738,Boston Celtics,1610612752,New York Knicks,0.9800788164138794,,,,,,1.0,0.6305835148144309,1610612738,Boston Celtics,2
+2,game,1610612738,Boston Celtics,1610612752,New York Knicks,0.9800788164138794,,,,,,2.0,0.6732164390235698,1610612738,Boston Celtics,2
+2,game,1610612738,Boston Celtics,1610612752,New York Knicks,0.9800788164138794,,,,,,3.0,0.44861332364171147,1610612738,Boston Celtics,2
+2,game,1610612738,Boston Celtics,1610612752,New York Knicks,0.9800788164138794,,,,,,4.0,0.9258518894777019,1610612752,New York Knicks,2
+2,game,1610612738,Boston Celtics,1610612752,New York Knicks,0.9800788164138794,,,,,,5.0,0.34715009360609284,1610612738,Boston Celtics,2
+3,series_summary,1610612760,Oklahoma City Thunder,1610612743,Denver Nuggets,0.9279565811157227,4.0,1.0,1610612760,Oklahoma City Thunder,5.0,,,,,2
+3,game,1610612760,Oklahoma City Thunder,1610612743,Denver Nuggets,0.9279565811157227,,,,,,1.0,0.8550423203804168,1610612743,Denver Nuggets,2
+3,game,1610612760,Oklahoma City Thunder,1610612743,Denver Nuggets,0.9279565811157227,,,,,,2.0,0.09660336785705981,1610612760,Oklahoma City Thunder,2
+3,game,1610612760,Oklahoma City Thunder,1610612743,Denver Nuggets,0.9279565811157227,,,,,,3.0,0.04553499853047771,1610612760,Oklahoma City Thunder,2
+3,game,1610612760,Oklahoma City Thunder,1610612743,Denver Nuggets,0.9279565811157227,,,,,,4.0,0.04852873710821759,1610612760,Oklahoma City Thunder,2
+3,game,1610612760,Oklahoma City Thunder,1610612743,Denver Nuggets,0.9279565811157227,,,,,,5.0,0.645136172912155,1610612760,Oklahoma City Thunder,2
+4,series_summary,1610612744,Golden State Warriors,1610612750,Minnesota Timberwolves,0.1823626607656479,2.0,4.0,1610612750,Minnesota Timberwolves,6.0,,,,,2
+4,game,1610612744,Golden State Warriors,1610612750,Minnesota Timberwolves,0.1823626607656479,,,,,,1.0,0.8361836156259813,1610612750,Minnesota Timberwolves,2
+4,game,1610612744,Golden State Warriors,1610612750,Minnesota Timberwolves,0.1823626607656479,,,,,,2.0,0.09567703592785315,1610612744,Golden State Warriors,2
+4,game,1610612744,Golden State Warriors,1610612750,Minnesota Timberwolves,0.1823626607656479,,,,,,3.0,0.6070569483714338,1610612750,Minnesota Timberwolves,2
+4,game,1610612744,Golden State Warriors,1610612750,Minnesota Timberwolves,0.1823626607656479,,,,,,4.0,0.30382108710229827,1610612750,Minnesota Timberwolves,2
+4,game,1610612744,Golden State Warriors,1610612750,Minnesota Timberwolves,0.1823626607656479,,,,,,5.0,0.6028583121884724,1610612744,Golden State Warriors,2
+4,game,1610612744,Golden State Warriors,1610612750,Minnesota Timberwolves,0.1823626607656479,,,,,,6.0,0.9283543058641652,1610612750,Minnesota Timberwolves,2
+1,series_summary,1610612739,Cleveland Cavaliers,1610612738,Boston Celtics,0.22632357478141785,3.0,4.0,1610612738,Boston Celtics,7.0,,,,,3
+1,game,1610612739,Cleveland Cavaliers,1610612738,Boston Celtics,0.22632357478141785,,,,,,1.0,0.33272470746230187,1610612738,Boston Celtics,3
+1,game,1610612739,Cleveland Cavaliers,1610612738,Boston Celtics,0.22632357478141785,,,,,,2.0,0.05762129697711105,1610612739,Cleveland Cavaliers,3
+1,game,1610612739,Cleveland Cavaliers,1610612738,Boston Celtics,0.22632357478141785,,,,,,3.0,0.6232738123056011,1610612739,Cleveland Cavaliers,3
+1,game,1610612739,Cleveland Cavaliers,1610612738,Boston Celtics,0.22632357478141785,,,,,,4.0,0.19289113246714928,1610612738,Boston Celtics,3
+1,game,1610612739,Cleveland Cavaliers,1610612738,Boston Celtics,0.22632357478141785,,,,,,5.0,0.11591423505340959,1610612739,Cleveland Cavaliers,3
+1,game,1610612739,Cleveland Cavaliers,1610612738,Boston Celtics,0.22632357478141785,,,,,,6.0,0.82333821235948,1610612738,Boston Celtics,3
+1,game,1610612739,Cleveland Cavaliers,1610612738,Boston Celtics,0.22632357478141785,,,,,,7.0,0.8414354126534843,1610612738,Boston Celtics,3
+2,series_summary,1610612760,Oklahoma City Thunder,1610612750,Minnesota Timberwolves,0.7731463313102722,2.0,4.0,1610612750,Minnesota Timberwolves,6.0,,,,,3
+2,game,1610612760,Oklahoma City Thunder,1610612750,Minnesota Timberwolves,0.7731463313102722,,,,,,1.0,0.14936196802543733,1610612760,Oklahoma City Thunder,3
+2,game,1610612760,Oklahoma City Thunder,1610612750,Minnesota Timberwolves,0.7731463313102722,,,,,,2.0,0.9707194883975361,1610612750,Minnesota Timberwolves,3
+2,game,1610612760,Oklahoma City Thunder,1610612750,Minnesota Timberwolves,0.7731463313102722,,,,,,3.0,0.9860918874534446,1610612750,Minnesota Timberwolves,3
+2,game,1610612760,Oklahoma City Thunder,1610612750,Minnesota Timberwolves,0.7731463313102722,,,,,,4.0,0.02917502410711137,1610612760,Oklahoma City Thunder,3
+2,game,1610612760,Oklahoma City Thunder,1610612750,Minnesota Timberwolves,0.7731463313102722,,,,,,5.0,0.1334490144388094,1610612750,Minnesota Timberwolves,3
+2,game,1610612760,Oklahoma City Thunder,1610612750,Minnesota Timberwolves,0.7731463313102722,,,,,,6.0,0.9571575174970925,1610612750,Minnesota Timberwolves,3
+1,series_summary,1610612738,Boston Celtics,1610612750,Minnesota Timberwolves,0.9211792945861816,3.0,4.0,1610612750,Minnesota Timberwolves,7.0,,,,,4
+1,game,1610612738,Boston Celtics,1610612750,Minnesota Timberwolves,0.9211792945861816,,,,,,1.0,0.4695871238573668,1610612738,Boston Celtics,4
+1,game,1610612738,Boston Celtics,1610612750,Minnesota Timberwolves,0.9211792945861816,,,,,,2.0,0.8816354749500087,1610612750,Minnesota Timberwolves,4
+1,game,1610612738,Boston Celtics,1610612750,Minnesota Timberwolves,0.9211792945861816,,,,,,3.0,0.23845592511203728,1610612750,Minnesota Timberwolves,4
+1,game,1610612738,Boston Celtics,1610612750,Minnesota Timberwolves,0.9211792945861816,,,,,,4.0,0.38848400054300924,1610612738,Boston Celtics,4
+1,game,1610612738,Boston Celtics,1610612750,Minnesota Timberwolves,0.9211792945861816,,,,,,5.0,0.6180223900457604,1610612738,Boston Celtics,4
+1,game,1610612738,Boston Celtics,1610612750,Minnesota Timberwolves,0.9211792945861816,,,,,,6.0,0.8569105764388161,1610612750,Minnesota Timberwolves,4
+1,game,1610612738,Boston Celtics,1610612750,Minnesota Timberwolves,0.9211792945861816,,,,,,7.0,0.9750060039987711,1610612750,Minnesota Timberwolves,4

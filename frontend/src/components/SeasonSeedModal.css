@@ -1,0 +1,96 @@
+.season-seed-modal {
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.season-seed-modal h2 {
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  transition: var(--transition-colors);
+}
+
+.modal-field {
+  margin-bottom: 16px;
+}
+
+.modal-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: var(--transition-colors);
+}
+
+.modal-field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 16px;
+  transition: var(--transition-colors);
+}
+
+.seed-info {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--secondary-text-color);
+  font-style: italic;
+  transition: var(--transition-colors);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.confirm-button {
+  background-color: #28a745; /* Green color */
+  color: white;
+}
+
+.confirm-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.confirm-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #b73137;
+}
+
+@media (max-width: 767px) {
+  .season-seed-modal {
+    padding: 15px;
+  }
+  
+  .modal-buttons button {
+    padding: 8px 16px;
+  }
+}

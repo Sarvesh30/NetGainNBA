@@ -1,0 +1,204 @@
+/* TeamCard.css */
+.team-card {
+  border-radius: 6px;
+  padding: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-bottom: 6px;
+  max-width: none; /* Remove max-width to fill the sidebar */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden;
+}
+
+/* Team name with logo container */
+.team-name-with-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+/* Team logo styling */
+.team-logo {
+  height: 24px;
+  width: auto;
+  margin-left: 4px;
+  object-fit: contain;
+}
+
+.team-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0));
+  pointer-events: none;
+  z-index: 2;
+}
+
+.team-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Common styles for both team name displays */
+.team-full-name, .team-abbrev {
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.3px;
+  transition: font-size 0.2s ease; /* Smooth transition for font size changes */
+  /* Force GPU acceleration and ensure consistent rendering */
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  z-index: 3;
+}
+
+/* Abbreviation style */
+.team-abbrev {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* Adaptive text sizing classes - add an extra small size */
+.text-size-xxs { font-size: 0.48rem; }
+.text-size-xs { font-size: 0.56rem; }
+.text-size-sm { font-size: 0.65rem; }
+.text-size-md { font-size: 0.74rem; }
+.text-size-lg { font-size: 0.82rem; }
+
+/* Team cards in the team list */
+.team-list-container .team-card .team-full-name {
+  display: block;
+  font-size: 0.74rem; /* Default size for team list */
+}
+
+.team-list-container .team-card .team-logo {
+  height: 22px;
+}
+
+/* Team cards in bracket slots */
+.bracket-slot .team-card {
+  width: 100%;
+  height: 100%; 
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bracket-slot .team-full-name {
+  display: block;
+  padding: 0 2px; /* Add minimal padding */
+}
+
+.bracket-slot .team-card .team-logo {
+  height: 20px;
+}
+
+/* Responsive display for team cards in bracket */
+@media (max-width: 1200px) {
+  .team-card {
+    height: 26px;
+  }
+  
+  .bracket-slot .team-card {
+    height: 30px;
+  }
+  
+  .bracket-slot .team-card.use-abbrev .team-abbrev {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .bracket-slot .team-card {
+    height: 26px;
+  }
+
+  .bracket-slot .team-card .team-abbrev {
+    font-size: 0.65rem;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .team-card {
+    height: 40px;
+    margin-bottom: 8px;
+    padding: 6px;
+  }
+  
+  .team-list-container .team-card {
+    height: 42px;
+  }
+  
+  .team-list-container .team-card .team-logo {
+    height: 30px;
+  }
+  
+  /* Always show abbreviations in bracket slots on mobile */
+  .bracket-slot .team-card {
+    height: 28px;
+  }
+  
+  .bracket-slot .team-card .team-abbrev {
+    font-size: 0.7rem;
+  }
+  
+  .remove-hint {
+    opacity: 0.8;
+    font-size: 0.65rem;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+@media (min-width: 1600px) {
+  .team-card {
+    height: 32px;
+    padding: 4px 6px;
+  }
+  
+  .bracket-slot .team-card {
+    height: 42px;
+  }
+  
+  .team-logo {
+    height: 28px;
+  }
+  
+  .bracket-slot .team-card .team-logo {
+    height: 26px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .team-card {
+    max-width: 180px;
+  }
+}

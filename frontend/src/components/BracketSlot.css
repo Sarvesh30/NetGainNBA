@@ -1,0 +1,282 @@
+/* BracketSlot.css */
+.bracket-slot {
+  width: 100%;
+  height: 40px;
+  border: 1.5px solid var(--bracket-border-color, var(--border-color)); /* Thicker border with new variable */
+  border-radius: 8px;
+  background-color: var(--bracket-slot-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: var(--transition-colors), transform 0.2s ease;
+  cursor: default;
+  box-sizing: border-box;
+  margin: 2px 0;
+  overflow: hidden;
+  min-height: 40px;
+  max-height: 40px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 0; /* Remove padding to allow card to fill completely */
+}
+
+.bracket-slot.is-over {
+  border-color: var(--east-conf);
+  box-shadow: 0 0 10px rgba(var(--east-conf-rgb, 29, 112, 183), 0.3);
+  transform: translateY(-1px);
+}
+
+/* Touch state for mobile */
+.bracket-slot.is-touching {
+  border-color: var(--east-conf);
+  box-shadow: 0 0 10px rgba(var(--east-conf-rgb, 29, 112, 183), 0.3);
+  transform: scale(1.02);
+}
+
+.empty-slot {
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+  padding: 5px 2px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  transition: opacity 0.2s, color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bracket-slot:hover .empty-slot {
+  opacity: 1;
+}
+
+.team-slot-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Remove hint styling */
+.remove-hint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 4px;
+}
+
+.team-slot-container:hover .remove-hint {
+  opacity: 1;
+}
+
+/* Conference border styles */
+.east-conference {
+  border-left: 4px solid var(--east-conf); /* Increase from 3px to 4px */
+  transition: var(--transition-colors);
+  box-sizing: border-box;
+}
+
+.west-conference {
+  border-left: 4px solid var(--west-conf); /* Increase from 3px to 4px */
+  transition: var(--transition-colors);
+  box-sizing: border-box;
+}
+
+.finals-conference {
+  border: 2px solid var(--accent-color); /* Increase from 1px to 2px */
+  transition: var(--transition-colors);
+}
+
+.champion-conference {
+  border: 2px solid var(--accent-color);
+  background: linear-gradient(135deg, var(--bracket-slot-bg), var(--card-bg));
+  transition: var(--transition-colors);
+}
+
+/* Style for simulation-only slots */
+.simulation-only {
+  border-style: dashed;
+  border-width: 1.5px; /* Thicker dashed border */
+  transition: var(--transition-colors);
+  /* Remove background-color here as it's set in App.css globally */
+}
+
+.simulation-only .empty-slot {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.7rem;
+  transition: var(--transition-colors);
+}
+
+/* Mobile select styling */
+.empty-slot.mobile-select {
+  font-weight: 600;
+  color: var(--primary-color);
+  opacity: 1;
+  background-color: rgba(var(--accent-color-rgb, 233, 180, 76), 0.1);
+  border-radius: 4px;
+  padding: 4px 0;
+}
+
+.empty-slot.mobile-select span {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* Responsive height adjustments */
+@media (max-width: 1200px) {
+  .bracket-slot {
+    height: 32px; /* Smaller height on small screens */
+    min-height: 32px;
+    max-height: 32px;
+  }
+  
+  .empty-slot {
+    font-size: 0.65rem;
+    padding: 3px 2px;
+    line-height: 1.2;
+  }
+  
+  .remove-hint {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .bracket-slot {
+    height: 28px; /* Even smaller on very small screens */
+    min-height: 28px;
+    max-height: 28px;
+  }
+  
+  .empty-slot {
+    font-size: 0.6rem;
+    padding: 2px 1px;
+  }
+}
+
+/* Improve remove hint visibility on mobile */
+@media (max-width: 767px) {
+  .team-slot-container:active .remove-hint {
+    opacity: 1;
+  }
+  
+  .remove-hint {
+    font-size: 0.7rem;
+    padding: 2px 0;
+    opacity: 0;
+  }
+  
+  /* Make the "Drop Here" text more prominent on mobile */
+  .empty-slot {
+    opacity: 0.9;
+    font-weight: 500;
+  }
+  
+  .bracket-slot {
+    min-height: 36px;
+    max-height: 36px;
+  }
+  
+  .empty-slot.mobile-select {
+    font-size: 0.75rem;
+  }
+
+  .bracket-slot .team-card {
+    height: 92%; /* Slight adjustment for mobile to ensure no overflow */
+  }
+}
+
+@media (min-width: 1600px) {
+  .bracket-slot {
+    height: 46px; /* Larger on big screens */
+    min-height: 46px;
+    max-height: 46px;
+  }
+  
+  .empty-slot {
+    font-size: 0.9rem;
+  }
+}
+
+/* Add these styles to the existing BracketSlot.css file */
+
+.team-with-metadata {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seed-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-color);
+  color: black;
+  font-weight: 600;
+  font-size: 0.6rem;
+  border-radius: 0 5px 0 5px;
+  padding: 2px 4px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.seed-number {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.season-year {
+  font-size: 0.5rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+  .seed-indicator {
+    font-size: 0.5rem;
+    padding: 1px 3px;
+  }
+}
+
+@media (max-width: 900px) {
+  .seed-indicator {
+    font-size: 0.45rem;
+    padding: 1px 2px;
+  }
+  
+  .seed-number {
+    font-size: 0.6rem;
+  }
+  
+  .season-year {
+    font-size: 0.45rem;
+  }
+}

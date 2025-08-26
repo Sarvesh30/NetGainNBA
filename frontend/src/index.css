@@ -1,0 +1,122 @@
+:root {
+  /* Light mode (default) - softer beige palette */
+  --primary-color: #2d3142; /* Softer dark blue */
+  --secondary-color: #d13b40; /* Muted red */
+  --accent-color: #e9b44c; /* Warm gold */
+  --background-color: #f5f3ed; /* Soft beige background */
+  --card-bg: #fdfbf7; /* Warm white for cards */
+  --text-primary: #2d3142; /* Dark blue-gray */
+  --text-secondary: #6e7387; /* Medium slate */
+  --east-conf: #1d70b7; /* Softer NBA East blue */
+  --west-conf: #d13b40; /* Softer NBA West red */
+  --box-shadow: 0 4px 15px rgba(45, 49, 66, 0.06);
+  --border-color: #c5c0b1; /* Darker border color for better contrast */
+  --bracket-border-color: #a8a294; /* New specific color for bracket borders */
+  --hover-bg: #ebe7db; /* Slightly darker beige for hover */
+  --card-header-border: rgba(45, 49, 66, 0.2); /* Darker header borders */
+  --bracket-slot-bg: #ffffff; /* Pure white for all slots */
+  --button-container-bg: #fdfbf7; /* Match card background */
+  --mobile-tab-active-bg: #f5f3ed; /* Light mode active tab background */
+  --mobile-tab-active-border: #1d70b7; /* Light mode active tab border */
+  --mobile-tab-hover-bg: #ebe7db; /* Light hover background */
+  
+  /* Transition settings */
+  --transition-colors: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  
+  font-family: 'Roboto', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--background-color);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode theme - earthy sophisticated palette */
+:root[data-theme="dark"] {
+  --primary-color: #c4c1ab; /* Light beige for text */
+  --secondary-color: #d13b40; /* Keep red, but slightly muted */
+  --accent-color: #e9b44c; /* Keep warm gold */
+  --background-color: #1a1916; /* Deep charcoal */
+  --card-bg: #262626; /* Dark gray for cards */
+  --text-primary: #c4c1ab; /* Warm beige */
+  --text-secondary: #8a8a8a; /* Medium gray */
+  --east-conf: #5a9bd5; /* Lightened East blue */
+  --west-conf: #e05c61; /* Lightened West red */
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --border-color: #3d3d3d; /* Dark gray borders */
+  --bracket-border-color: #3d3d3d; /* Match border color for dark mode */
+  --hover-bg: #313131; /* Slightly lighter for hover */
+  --card-header-border: rgba(196, 193, 171, 0.15);
+  --bracket-slot-bg: #2f2e2b; /* Slightly lighter than card bg */
+  --button-container-bg: #262626; /* Match card background */
+  --mobile-tab-active-bg: #313131; /* Dark mode active tab background */
+  --mobile-tab-active-border: #5a9bd5; /* Dark mode active tab border */
+  --mobile-tab-hover-bg: #3d3d3d; /* Dark hover background */
+  
+  color-scheme: dark;
+}
+
+/* Reset some browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Rest of the existing styles with updates */
+a {
+  font-weight: 500;
+  color: var(--east-conf);
+  text-decoration: inherit;
+  transition: var(--transition-colors);
+}
+
+a:hover {
+  color: var(--west-conf);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  transition: var(--transition-colors);
+}
+
+h1, h2, h3 {
+  transition: var(--transition-colors);
+}
+
+h1 {
+  font-size: 2.8em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.25s;
+  color: var(--text-primary);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background-color: var(--hover-bg);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px auto -webkit-focus-ring-color;
+}

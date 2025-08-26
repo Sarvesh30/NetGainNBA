@@ -1,0 +1,205 @@
+.ml-config-container {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 15px 10px;
+  box-shadow: var(--box-shadow), 0 0 0 1px var(--bracket-border-color); /* Add a thin border via box-shadow */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Full height to match bracket */
+  transition: var(--transition-colors);
+  border-top: 4px solid var(--west-conf);
+  /* Width is now controlled by App.css */
+}
+
+.ml-config-container h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  border-bottom: 1.5px solid var(--card-header-border); /* Thicker border */
+  padding-bottom: 10px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  transition: var(--transition-colors);
+}
+
+/* Match TeamList scrollbar styling */
+.config-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-grow: 1;
+  margin-bottom: 15px;
+  direction: ltr; /* Reset to normal direction */
+  padding-right: 5px;
+}
+
+.config-options::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.config-options::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+  transition: var(--transition-colors);
+}
+
+.config-options::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary);
+}
+
+/* Child elements should have normal text direction */
+.config-options > * {
+  direction: ltr;
+}
+
+/* Simulation button container */
+.simulation-button-container {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1.5px solid var(--border-color); /* Thicker border */
+  position: sticky;
+  bottom: 0;
+  background-color: var(--button-container-bg);
+  transition: none;
+}
+
+.simulation-button {
+  width: 100%;
+  padding: 8px 16px;
+  background: linear-gradient(45deg, #56a75d, #4a9451);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+}
+
+.simulation-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.05);
+}
+
+/* Add disabled button styling */
+.simulation-button:disabled {
+  background: linear-gradient(45deg, #9b9b9b, #7a7a7a);
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+.simulation-button:disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  filter: none;
+}
+
+/* Configuration option styling */
+.config-option {
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: var(--card-bg-light, rgba(255, 255, 255, 0.05));
+  transition: var(--transition-colors);
+}
+
+/* Checkbox container styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Checkbox input styling */
+.checkbox-container input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--west-conf);
+}
+
+/* Checkbox label styling */
+.checkbox-label {
+  transition: var(--transition-colors);
+}
+
+/* Hover effect for the entire option */
+.config-option:hover {
+  background-color: var(--card-bg-hover, rgba(255, 255, 255, 0.08));
+}
+
+/* Media queries */
+@media (min-height: 800px) {
+  .ml-config-container {
+    height: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .ml-config-container {
+    padding: 10px 8px;
+  }
+  
+  .ml-config-container h2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .ml-config-container {
+    min-width: 110px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .ml-config-container {
+    min-width: 170px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .ml-config-container {
+    min-width: 190px;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .ml-config-container {
+    border-radius: 10px;
+    padding: 12px;
+    height: auto;
+    max-height: calc(100vh - 180px);
+    border-top-width: 4px;
+    width: 100% !important; /* Force full width on mobile */
+    max-width: 100% !important; /* Override any max-width settings */
+    min-width: 100% !important; /* Ensure consistent width */
+    flex: none !important; /* Remove flex constraints */
+    box-sizing: border-box;
+    margin: 0; /* Reset margin */
+  }
+
+  .config-options {
+    max-height: calc(100vh - 250px);
+  }
+
+  /* Hide the simulation button container on mobile */
+  .simulation-button-container {
+    display: none;
+  }
+}

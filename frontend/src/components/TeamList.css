@@ -1,0 +1,228 @@
+/* TeamList.css */
+.team-list-container {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 15px 10px;
+  box-shadow: var(--box-shadow), 0 0 0 1px var(--bracket-border-color); /* Add a thin border via box-shadow */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Full height to match bracket */
+  transition: var(--transition-colors);
+  border-top: 4px solid var(--east-conf);
+  /* Width is now controlled by App.css */
+}
+
+.team-list-container h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  border-bottom: 1.5px solid var(--card-header-border); /* Thicker border */
+  padding-bottom: 10px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  transition: var(--transition-colors);
+}
+
+/* Fix scrollbar position and add centering */
+.conference-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-grow: 1;
+  margin-bottom: 15px;
+  direction: ltr; /* Reset to normal direction */
+  padding-right: 5px;
+}
+
+/* Add custom scrollbar styling adapted for theme */
+.conference-lists::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.conference-lists::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+  transition: var(--transition-colors);
+}
+
+.conference-lists::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary);
+}
+
+/* Fix the content direction back to normal */
+.conference-section {
+  direction: ltr; /* Reset direction for the content */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conference-section h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 5px;
+  color: var(--primary-color);
+  transition: var(--transition-colors);
+}
+
+.conference-section:first-child h3 {
+  color: var(--east-conf);
+}
+
+.conference-section:last-child h3 {
+  color: var(--west-conf);
+}
+
+.conference-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.conference-section:first-child h3::after {
+  background-color: var(--east-conf);
+}
+
+.conference-section:last-child h3::after {
+  background-color: var(--west-conf);
+}
+
+.team-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ensure it takes full width */
+  align-items: center; /* Center the team cards horizontally */
+}
+
+/* Only apply left margin when scrollbar is visible */
+.team-grid:has(+ .conference-lists::-webkit-scrollbar-thumb) {
+  align-items: flex-start;
+  padding-left: 5px;
+}
+
+.no-teams {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-secondary);
+  background-color: var(--hover-bg);
+  border-radius: 8px;
+  margin: 10px;
+  transition: var(--transition-colors);
+}
+
+.reset-button-container {
+  margin-top: auto; /* Push to bottom */
+  padding-top: 10px;
+  border-top: 1.5px solid var(--border-color); /* Slightly thicker border */
+  position: sticky;
+  bottom: 0;
+  background-color: var(--button-container-bg); /* Use specific variable */
+  transition: none; /* Remove transition to fix animation */
+}
+
+.reset-button {
+  width: 100%;
+  padding: 8px 16px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease, background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.reset-button:hover {
+  background-color: #b73137;
+  transform: translateY(-1px);
+}
+
+@media (min-height: 800px) {
+  .team-list-container {
+    height: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .team-list-container {
+    padding: 10px 8px;
+  }
+  
+  .team-list-container h2 {
+    font-size: 0.9rem;
+  }
+  
+  .conference-section h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Remove the flex and width settings from media queries as they're now in App.css */
+
+@media (max-width: 900px) {
+  .team-list-container {
+    min-width: 110px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .team-list-container {
+    max-width: 190px;
+    min-width: 170px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .team-list-container {
+    max-width: 220px;
+    min-width: 190px;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .team-list-container {
+    border-radius: 10px;
+    padding: 12px;
+    height: auto;
+    max-height: calc(100vh - 180px);
+  }
+
+  .conference-lists {
+    max-height: calc(100vh - 250px);
+  }
+
+  .conference-section {
+    padding-bottom: 10px;
+  }
+
+  .conference-section h3 {
+    font-size: 1rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Remove bottom border on mobile as we use fixed buttons */
+  .reset-button-container {
+    display: none;
+  }
+}

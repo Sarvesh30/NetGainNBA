@@ -1,0 +1,1 @@
+{"best_params": {"n_d": 56, "n_a": 64, "n_steps": 6, "gamma": 1.3930814539055605, "lambda_sparse": 0.0029833605183872134, "momentum": 0.15891701764952307, "mask_type": "entmax"}, "optimizer_params": {"lr": 0.0076661428463103455, "weight_decay": 2.501056095511525e-05}, "seed": 8}

@@ -1,0 +1,438 @@
+/* BracketTree.css */
+.bracket-container {
+  flex: 3;
+  padding: 15px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow), 0 0 0 1px var(--bracket-border-color); /* Add a thin border via box-shadow */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  transition: var(--transition-colors);
+}
+
+/* Fix for border radius issue */
+.bracket-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8px;
+  background-color: var(--card-bg); /* Use theme variable */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: var(--transition-colors);
+}
+
+.conference-headers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1vw, 1.1rem);
+  border-bottom: 1.5px solid var(--card-header-border); /* Thicker border */
+  padding-bottom: 10px;
+  transition: var(--transition-colors);
+}
+
+/* Conference headers styling with transition support */
+.east-header {
+  color: var(--east-conf);
+  flex: 2;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-colors);
+}
+
+.east-header::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background-color: var(--east-conf);
+  border-radius: 1px;
+  transition: var(--transition-colors);
+}
+
+.finals-header {
+  flex: 1;
+  text-align: center;
+  color: var(--accent-color);
+  position: relative;
+  transition: var(--transition-colors);
+}
+
+.finals-header::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 1px;
+  transition: var(--transition-colors);
+}
+
+.west-header {
+  color: var(--west-conf);
+  flex: 2;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-colors);
+}
+
+.west-header::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background-color: var(--west-conf);
+  border-radius: 1px;
+  transition: var(--transition-colors);
+}
+
+/* Return to flex-based layout with better overflow control */
+.bracket-rounds {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  align-items: stretch;
+  min-height: 0;
+  margin-top: 10px;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 3px;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 0;
+  position: relative;
+}
+
+.round h3 {
+  text-align: center;
+  margin-bottom: 8px;
+  margin-top: 0;
+  color: var(--text-primary);
+  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: var(--transition-colors);
+}
+
+.round-1 h3, .round-2 h3, .round-3 h3, .round-4 h3 {
+  border-bottom: 1.5px dashed var(--bracket-border-color, var(--border-color)); /* Thicker and darker dashed border */
+  transition: var(--transition-colors);
+}
+
+.matchups {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.east-matchups, .west-matchups {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+  height: 100%; /* Ensure both sides have the same height */
+}
+
+.east-matchups .bracket-slot {
+  border-left: 4px solid var(--east-conf);
+}
+
+.west-matchups .bracket-slot {
+  border-left: 4px solid var(--west-conf);
+}
+
+/* Make champion round narrower */
+.champion-round {
+  max-width: 120px;
+  min-width: 90px;
+  align-self: center;
+}
+
+.champion-round h3 {
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: var(--transition-colors);
+}
+
+.champion-matchup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.finals-matchups .bracket-slot {
+  border: 2px solid var(--accent-color);
+  background: var(--bracket-slot-bg);
+  transition: var(--transition-colors);
+}
+
+.champion-matchup .bracket-slot {
+  border: 3px solid var(--accent-color);
+  background: var(--bracket-slot-bg);
+  box-shadow: 0 0 15px rgba(var(--accent-color-rgb, 233, 180, 76), 0.15);
+  transition: var(--transition-colors);
+}
+
+/* Simple media queries for spacing adjustments */
+@media (max-width: 1200px) {
+  .round {
+    padding: 0 1px; /* Minimal padding on small screens */
+  }
+  
+  .round h3 {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+  
+  .champion-round {
+    max-width: 100px;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 900px) {
+  .conference-headers {
+    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+  }
+  
+  .round h3 {
+    font-size: 0.65rem;
+    margin-bottom: 2px;
+  }
+  
+  .champion-round {
+    max-width: 80px;
+    min-width: 60px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .bracket-container {
+    padding: 20px;
+  }
+  
+  .round h3 {
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile scroll hint */
+.mobile-scroll-hint {
+  display: none;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background-color: rgba(var(--accent-color-rgb, 233, 180, 76), 0.1);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.mobile-view .mobile-scroll-hint {
+  display: block;
+}
+
+/* IMPORTANT: Only apply min-width in mobile view */
+.mobile-view .bracket-rounds {
+  min-width: 900px; /* Minimum width to ensure all rounds are visible */
+}
+
+/* Fix desktop bracket sizing */
+@media (min-width: 768px) {
+  .bracket-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bracket-rounds {
+    flex: 1;
+    height: auto;
+    min-height: 0;
+  }
+  
+  /* Ensure mobile elements are hidden on desktop */
+  .mobile-bracket-actions {
+    display: none !important;
+  }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 767px) {
+  .bracket-container {
+    padding: 10px;
+    overflow-x: auto !important; /* Force scrolling */
+    -webkit-overflow-scrolling: touch;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 75vh; /* Make the bracket taller on mobile */
+    margin-bottom: 0;
+    max-width: none; /* Remove max-width constraint */
+    width: 100%; /* Take full width */
+  }
+
+  .conference-headers {
+    min-width: 900px; /* Match the bracket-rounds width */
+    padding-right: 10px; /* Add some padding for better visual appearance */
+  }
+
+  .bracket-rounds {
+    margin-top: 5px;
+    min-width: 900px; /* Keep minimum width but allow bigger */
+    height: calc(100% - 80px); /* Give more vertical space for the bracket */
+  }
+
+  .round h3 {
+    font-size: 0.65rem;
+    margin-bottom: 4px;
+  }
+
+  .champion-round {
+    max-width: 70px;
+    min-width: 50px;
+  }
+
+  /* Smaller bracket slots on mobile */
+  .bracket-slot {
+    min-height: 36px;
+    max-height: 36px;
+  }
+
+  /* Ensure champion is prominent */
+  .champion-matchup .bracket-slot {
+    min-height: 40px;
+    max-height: 40px;
+  }
+  
+  /* Show reset button on mobile */
+  .mobile-bracket-actions {
+    display: block;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Make sure reset button is visible */
+  .mobile-view .mobile-bracket-actions {
+    display: block !important;
+    margin-top: 15px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Remove the scroll hint class - we don't need it */
+  .mobile-scroll-hint {
+    display: none;
+  }
+
+  /* Fix selector to match the actual DOM structure */
+  .mobile-bracket-actions {
+    display: block !important;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Ensure the bracket scrolls horizontally */
+  .mobile-view .bracket-rounds {
+    min-width: 900px; /* Ensure minimum width is enforced */
+    width: 900px; /* Set explicit width */
+  }
+}
+
+/* Mobile bracket actions - fix visibility issues */
+.mobile-bracket-actions {
+  /* Remove the conflicting display properties */
+  display: none; /* Hidden by default */
+  width: 100%;
+  margin-top: 15px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Only show and style mobile actions when in mobile view */
+.mobile-view .mobile-bracket-actions {
+  display: flex !important;
+  flex-direction: column;
+  gap: 30px; /* Increase gap between buttons */
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 10;
+}
+
+.mobile-reset-button {
+  width: 100%;
+  padding: 14px 0;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  height: 100px; /* Increase height for better touch target */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.mobile-save-button {
+  width: 100%;
+  padding: 14px 0;
+  background: linear-gradient(45deg, #56a75d, #4a9451); /* Green gradient */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  height: 100px; /* Increase height for better touch target */
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-reset-button:hover,
+.mobile-reset-button:active {
+  background-color: #b73137;
+}
+
+.mobile-save-button:hover,
+.mobile-save-button:active {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}

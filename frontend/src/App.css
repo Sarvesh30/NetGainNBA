@@ -1,0 +1,906 @@
+/* App.css */
+:root {
+  --primary-color: #0a1128; /* Deep navy blue */
+  --secondary-color: #E63946; /* Vibrant red */
+  --accent-color: #FFB800; /* Gold */
+  --background-color: #f8f9fa; /* Light gray */
+  --card-bg: #ffffff; /* Pure white */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --east-conf: #006BB6; /* NBA East blue */
+  --west-conf: #E03A3E; /* NBA West red */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --border-color: #e6e2d9; /* Light beige border */
+  --mobile-tab-active-bg: #f0f0f0;
+  --mobile-tab-active-border: #006BB6;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--background-color);
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-secondary) transparent;
+  transition: var(--transition-colors);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  color: var(--text-primary);
+  transition: var(--transition-colors);
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make the layout container truly dynamic with consistent padding */
+.app-container {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 2vh 0; /* Remove horizontal padding initially */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  background-color: var(--background-color);
+  transition: var(--transition-colors);
+}
+
+/* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vh;
+  width: calc(100% - 40px); /* Maintain current width */
+  max-width: 2200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding: 0;
+}
+
+header h1 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: var(--transition-colors);
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  max-width: 300px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--east-conf), var(--west-conf));
+  border-radius: 2px;
+  transition: background 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Add subtle shadow to the divider */
+}
+
+.header-left, .header-right {
+  min-width: 0; /* Allow to shrink if needed */
+  display: flex;
+  align-items: center;
+  width: 200px; /* Same width as side panels */
+}
+
+.header-left {
+  justify-content: flex-start;
+  padding-left: 0; /* Remove extra padding */
+}
+
+.header-left > * {
+  margin-left: 0;
+}
+
+.header-right {
+  justify-content: flex-end;
+  padding-right: 0; /* Remove extra padding */
+}
+
+.login-button {
+  padding: 6px 16px;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-color); /* Thicker border */
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: var(--hover-bg);
+  transform: translateY(-1px);
+}
+
+/* Main content layout - updated for proper centering and alignment */
+.main-content {
+  display: flex;
+  width: calc(100% - 40px); /* Match header width */
+  max-width: 2200px;
+  flex-grow: 1;
+  overflow: hidden;
+  height: calc(100% - 15vh);
+  justify-content: space-between; /* Use space-between to ensure alignment with header */
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px; /* Fixed consistent gap of 20px */
+}
+
+/* Header and panel alignment - minimum width but allow expansion */
+.header-left {
+  min-width: 240px;
+  width: 240px;
+  max-width: 240px;
+}
+
+.header-right {
+  min-width: 240px;
+  width: 240px;
+  max-width: 240px;
+}
+
+/* Allow panels to be wider on larger screens */
+.team-list-container {
+  min-width: 240px;
+  width: clamp(240px, calc(30% - 20px), 600px); /* Dynamic width that grows with screen size */
+  max-width: none;
+  margin-right: 0;
+}
+
+.ml-config-container {
+  min-width: 240px;
+  width: clamp(240px, calc(30% - 20px), 600px); /* Dynamic width that grows with screen size */
+  max-width: none;
+  margin-left: 0;
+}
+
+/* Panel wrapper consistency */
+.main-content > .panel {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure all panels are full height */
+}
+
+/* Container styling */
+.bracket-container, .team-list-container, .ml-config-container {
+  box-shadow: var(--box-shadow);
+  transition: var(--transition-colors);
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  border: 1.5px solid var(--bracket-border-color, var(--border-color)); /* Thicker border with new variable */
+  margin: 0; /* Ensure no extra margins are added */
+  height: 100%; /* Ensure all containers are full height */
+}
+
+/* Side panel sizing - adaptive */
+.team-list-container, .ml-config-container {
+  height: 100%;
+  flex: 0 1 auto; /* Allow shrinking but limit growing */
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* Explicitly set margins to 0 */
+  padding: 15px 10px; /* Ensure padding is identical on both panels */
+}
+
+/* Bracket container - fixed width with auto margins but ensure it doesn't shrink too much */
+.bracket-container {
+  flex: 1;
+  min-width: 0;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: auto;
+}
+
+/* Button containers */
+.reset-button-container, .simulation-button-container {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  position: sticky;
+  bottom: 0;
+  background-color: var(--button-container-bg);
+  transition: none;
+}
+
+.reset-button {
+  padding: 10px 16px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.reset-button:hover {
+  background-color: #b73137;
+  transform: translateY(-1px);
+}
+
+/* Bracket slot styling overrides */
+.bracket-slot {
+  background-color: var(--bracket-slot-bg) !important;
+}
+
+.simulation-only {
+  background-color: var(--bracket-slot-bg) !important;
+  opacity: 0.85;
+  border-style: dashed;
+}
+
+/* Mobile Tab Navigation */
+.mobile-tabs {
+  display: none; /* Hidden by default, shown only on mobile */
+  width: 100%;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+  overflow-x: auto; /* Allow scrolling if needed */
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.mobile-tabs::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+  margin: 0;
+  min-width: 80px;
+}
+
+.tab-button:hover {
+  background-color: var(--mobile-tab-hover-bg);
+}
+
+.tab-button.active {
+  color: var(--text-primary);
+  border-bottom: 3px solid var(--mobile-tab-active-border);
+  background-color: var(--mobile-tab-active-bg);
+}
+
+/* Panel visibility for mobile */
+.mobile-layout .panel {
+  width: 100%;
+  flex: none;
+  max-width: 100%;
+}
+
+.mobile-layout .panel.hidden {
+  display: none;
+}
+
+.mobile-layout .panel.visible {
+  display: block;
+}
+
+/* Mobile action buttons container */
+.mobile-actions {
+  display: none; /* Hidden by default, shown only on mobile */
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding-bottom: env(safe-area-inset-bottom, 10px); /* Support for iPhone X+ */
+}
+
+.mobile-action-button {
+  width: 90%;
+  padding: 14px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* Reset button styling for mobile */
+.mobile-action-button.reset-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Simulation button styling for mobile */
+.mobile-action-button.simulation-button {
+  background: linear-gradient(45deg, #56a75d, #4a9451);
+  color: white;
+}
+
+/* Wrapper for bracket and its actions */
+.bracket-panel-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%; /* Make sure wrapper is full height */
+}
+
+/* Backup reset button as a failsafe */
+.bracket-reset-backup {
+  display: none; /* Hidden by default */
+  margin-top: 15px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.reset-bracket-button {
+  width: 100%;
+  padding: 14px 0;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* Guaranteed reset button for mobile */
+.guaranteed-reset {
+  display: none;
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.guaranteed-reset-button {
+  width: 100%;
+  padding: 14px 0;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries */
+@media (min-width: 1200px) {
+  .main-content {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 1400px) {
+  .header-left {
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+  }
+  
+  .header-right {
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+  }
+  
+  .team-list-container {
+    min-width: 210px;
+    width: clamp(210px, calc(30% - 16px), 500px);
+  }
+  
+  .ml-config-container {
+    min-width: 210px;
+    width: clamp(210px, calc(30% - 16px), 500px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-left {
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+  }
+  
+  .header-right {
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+  }
+  
+  .team-list-container {
+    min-width: 180px;
+    width: clamp(180px, calc(30% - 12px), 400px);
+  }
+  
+  .ml-config-container {
+    min-width: 180px;
+    width: clamp(180px, calc(30% - 12px), 400px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .header-left {
+    width: 160px;
+    min-width: 160px;
+    max-width: 160px;
+  }
+  
+  .header-right {
+    width: 160px;
+    min-width: 160px;
+    max-width: 160px;
+  }
+  
+  .team-list-container {
+    min-width: 160px;
+    width: clamp(160px, calc(30% - 10px), 300px);
+  }
+  
+  .ml-config-container {
+    min-width: 160px;
+    width: clamp(160px, calc(30% - 10px), 300px);
+  }
+}
+
+@media (max-width: 900px) {
+  .app-container {
+    padding: 10px 15px;
+  }
+  
+  header {
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .main-content {
+    gap: 10px;
+  }
+  
+  .header-left {
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+  }
+  
+  .header-right {
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+  }
+  
+  .team-list-container {
+    min-width: 130px;
+    width: clamp(130px, calc(30% - 8px), 200px);
+  }
+  
+  .ml-config-container {
+    min-width: 130px;
+    width: clamp(130px, calc(30% - 8px), 200px);
+  }
+}
+
+@media (max-width: 700px) {
+  .header-left {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+  }
+  
+  .header-right {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+  }
+  
+  .team-list-container {
+    min-width: 100px;
+    width: clamp(100px, calc(30% - 8px), 150px);
+  }
+  
+  .ml-config-container {
+    min-width: 100px;
+    width: clamp(100px, calc(30% - 8px), 150px);
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .header-left {
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+  }
+  
+  .header-right {
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+  }
+  
+  .team-list-container {
+    min-width: 240px;
+    width: clamp(240px, calc(35% - 20px), 700px);
+  }
+  
+  .ml-config-container {
+    min-width: 240px;
+    width: clamp(240px, calc(35% - 20px), 700px);
+  }
+  
+  .bracket-container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .header-left {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+  }
+  
+  .header-right {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+  }
+  
+  .team-list-container {
+    min-width: 280px;
+    width: clamp(280px, calc(40% - 20px), 800px);
+  }
+  
+  .ml-config-container {
+    min-width: 280px;
+    width: clamp(280px, calc(40% - 20px), 800px);
+  }
+  
+  .bracket-container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .app-container {
+    padding: 2vh 4vw;
+  }
+  
+  .main-content {
+    gap: 20px; /* Keep consistent 20px gap */
+  }
+  
+  .header-left {
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+  }
+  
+  .header-right {
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+  }
+  
+  .team-list-container {
+    min-width: 320px;
+    width: clamp(320px, calc(45% - 20px), 1000px);
+  }
+  
+  .ml-config-container {
+    min-width: 320px;
+    width: clamp(320px, calc(45% - 20px), 1000px);
+  }
+  
+  .bracket-container {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .app-container {
+    max-width: 2200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .app-container {
+    padding: 10px 10px 80px; /* Add padding back for mobile */
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  header {
+    margin-bottom: 20px; /* Increase bottom margin on mobile */
+    width: 100%; /* Full width on mobile */
+  }
+  
+  header::after {
+    bottom: -12px; /* Adjust line position for mobile */
+  }
+  
+  header h1 {
+    font-size: 1.2rem;
+    max-width: 150px;
+  }
+  
+  .header-left, .header-right {
+    width: auto;
+    min-width: initial;
+    max-width: none;
+    flex: none;
+  }
+  
+  .main-content {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    overflow: visible;
+    justify-content: flex-start; /* Reset to flex-start on mobile */
+    width: 100%; /* Full width on mobile */
+  }
+  
+  /* Reset adaptive sizing for mobile layout */
+  .team-list-container, .ml-config-container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    flex: none;
+    margin: 0;
+    padding: 15px 10px;
+  }
+  
+  .mobile-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8px; /* Add space after header line */
+  }
+
+  .tab-button {
+    width: 50%; /* Now we only have 2 tabs */
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+  
+  /* Reset bracket container sizing for mobile */
+  .bracket-container {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 75vh;
+    overflow-x: auto;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+  }
+  
+  .bracket-rounds {
+    min-width: 900px; /* Ensure minimum width to see all rounds */
+    padding-bottom: 10px;
+  }
+  
+  /* Adjust the team list and ML config containers for mobile */
+  .team-list-container,
+  .ml-config-container {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 200px);
+    flex: none;
+  }
+  
+  .team-list-container h2,
+  .ml-config-container h2 {
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .bracket-panel-wrapper {
+    margin-bottom: 15px;
+  }
+  
+  /* Hide mobile actions by default */
+  .mobile-actions {
+    display: none;
+  }
+  
+  /* Only show mobile actions for active tab */
+  .panel.visible + .mobile-actions {
+    display: flex;
+  }
+  
+  .mobile-actions {
+    display: flex;
+  }
+  
+  /* Hide the original buttons in components */
+  .team-list-container .reset-button-container,
+  .ml-config-container .simulation-button-container {
+    display: none;
+  }
+  
+  /* Only show this if the primary reset is failing for some reason */
+  .mobile-bracket-actions:empty ~ .bracket-reset-backup {
+    display: block;
+  }
+
+  /* Show guaranteed reset button as a fallback */
+  .mobile-bracket-actions:not(:empty) + .guaranteed-reset {
+    display: none;
+  }
+  
+  .guaranteed-reset {
+    display: block;
+  }
+
+  /* Override desktop-specific height settings for mobile */
+  .main-content > .panel,
+  .bracket-panel-wrapper,
+  .bracket-container {
+    height: auto;
+  }
+  
+  /* Restore mobile scrolling functionality */
+  .mobile-layout .panel {
+    width: 100%;
+    flex: none;
+    max-width: 100%;
+    overflow-x: auto; /* Ensure horizontal scrolling works */
+  }
+  
+  /* Reset ML Config container sizing on mobile */
+  .mobile-layout .ml-config-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Fix bracket panel wrapper for mobile */
+  .mobile-layout .bracket-panel-wrapper {
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 2vh 0;
+  }
+  
+  /* Remove extra margins so header-left and header-right align with side panels */
+  .header-left {
+    padding-left: 2px;
+    margin-left: 0; /* Remove any left margin */
+  }
+  .header-right {
+    padding-right: 2px;
+    margin-right: 0; /* Ensure right edge aligns */
+  }
+  
+  /* Ensure side panels extend flush to container edges */
+  .team-list-container {
+    margin-left: 0;
+  }
+  .ml-config-container {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-layout .panel {
+    display: block !important; /* Always show panels on non-mobile */
+  }
+}
+
+/* Add new adaptive width container styles */
+@media (min-width: 1400px) {
+  .main-content {
+    justify-content: space-between; /* Ensure proper alignment */
+  }
+}
+
+/* Also fix the gap for smaller screens */
+@media (max-width: 1000px) {
+  .main-content {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    gap: 10px;
+  }
+}
+
+/* Custom Alert Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  width: 400px;
+  transition: var(--transition-colors);
+}
+
+.alert-modal {
+  text-align: center;
+}
+
+.alert-modal p {
+  margin: 10px 0 20px;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.alert-modal button {
+  padding: 8px 24px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.alert-modal button:hover {
+  background-color: #122e6b;
+}
