@@ -4,6 +4,13 @@ This project is a web application that uses ML to predict NBA match outcomes. It
 
 ---
 
+## Demo
+
+<video width="800" controls>
+  <source src="assets/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## ML Workflow
 
 1. **Data Collection & Cleaning**  
