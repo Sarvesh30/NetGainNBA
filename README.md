@@ -1,6 +1,36 @@
-# NBA Net Gain Web Application
+# NetGainNBA
 
-This project is a web application that uses ML to predict NBA match outcomes
+This project is a web application that uses ML to predict NBA match outcomes. It combines **data collection, cleaning, machine learning modeling, and simulations** to provide actionable insights for front office management.  
+
+---
+
+## ML Workflow
+
+1. **Data Collection & Cleaning**  
+   - Fetched team, player, and matchup data from the NBA API.  
+   - Joined and cleaned datasets to create structured inputs for modeling.  
+
+2. **Player & Team Clustering**  
+   - Clustered players into playstyles using **K-Means clustering**.  
+   - Transformed player clusters into **team-level playstyle proportions**.  
+
+3. **Regression Modeling**  
+   - Built **Random Forest** and **XGBoost** models to forecast the number of playoff wins for a team.  
+
+4. **Classification Modeling**  
+   - Shifted to a **classification approach** using **TabNet neural networks**.  
+   - Used **temporal sliding cross-validation** to predict actual playoff matchups.  
+   - Achieved **88% playoff prediction accuracy (2020–2024)**.  
+
+5. **Simulation & Monte Carlo Analysis**  
+   - Introduced **controlled randomness** via Monte Carlo simulations.  
+   - Predicted playoff winners and displayed **round-by-round probabilities** for each team.  
+
+**Application Insight:**  
+- Front office management can analyze which playstyles are most impactful for playoff performance.  
+- Users can simulate **any playoff bracket** and visualize the effect of different team archetypes.  
+
+---
 
 ## Getting Started
 
